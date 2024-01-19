@@ -1,0 +1,17 @@
+# https://github.com/esphome/build-action
+# https://github.com/esphome/workflows
+
+name: Build and Publish
+
+on:
+  push:
+    branches:
+      - main
+      - workflows
+
+jobs:
+  build:
+    uses: esphome/workflows/.github/workflows/publish.yml@main
+    with:
+      files: airgradient-one.yaml, airgradient-pro.yaml
+      name: airgradient_esphome
